@@ -1,4 +1,4 @@
-#!/usr/bin/python2.4 -tt
+#!/usr/bin/python2.4 -tt\\
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -16,13 +16,13 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-  if len(s) > 2:
-    if s.endswith('ing') == True:
-      return (s + 'ly')
+    if len(s) > 2:
+        if s.endswith('ing') == True:
+            return (s + 'ly')
+        else:
+            return (s + 'ing')
     else:
-      return (s + 'ing')
-  else:
-    return (s)
+        return (s)
 
 
 # E. not_bad
@@ -34,13 +34,12 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-  is_not = s.find('not')
-  is_bad = s.find('bad')
-  if is_not != -1 and is_bad != -1 and is_not < is_bad:
-    result = s.replace(s[int(s.find('not')):int(s.rfind('bad')+3)], 'good')
-    return (result)   ##OR##   s = ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
-  return(s)           ######   return (s)
-                      ######return (s)
+    is_not = s.find('not')
+    is_bad = s.find('bad')
+    if is_not != -1 and is_bad != -1 and is_not < is_bad:
+        s = s.replace(s[int(s.find('not')):int(s.rfind('bad')+3)], 'good')
+        return (s)    
+    return(s)       
   
 
 
@@ -52,23 +51,23 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-  len_a = len(a)
-  len_b = len(b)
-  if len_a % 2 == 0:
-    a_front = a[:int(len_a / 2)]
-    a_back = a[int(len_a / 2):]
-  else:
-    a_front = a[:int((len_a + 1) / 2)]
-    a_back = a[int((len_a + 1) / 2):]
+    len_a = len(a)
+    len_b = len(b)
+    if len_a % 2 == 0:
+        a_front = a[:int(len_a / 2)]
+        a_back = a[int(len_a / 2):]
+    else:
+        a_front = a[:int((len_a + 1) / 2)]
+        a_back = a[int((len_a + 1) / 2):]
           
-  if len_b % 2 == 0:
-    b_front = b[:int(len_b / 2)]
-    b_back = b[int(len_b / 2):]
-  else:
-    b_front = b[:int((len_b + 1) / 2)]
-    b_back = b[int((len_b + 1)/ 2):]
+    if len_b % 2 == 0:
+        b_front = b[:int(len_b / 2)]
+        b_back = b[int(len_b / 2):]
+    else:
+        b_front = b[:int((len_b + 1) / 2)]
+        b_back = b[int((len_b + 1)/ 2):]
 
-  return (a_front + b_front + a_back + b_back )
+    return (a_front + b_front + a_back + b_back )
 
 
 

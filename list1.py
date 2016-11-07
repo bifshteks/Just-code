@@ -1,4 +1,4 @@
-#!/usr/bin/python -tt
+#!/usr/bin/python -tt\\
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -22,12 +22,12 @@
 # Note: python does not have a ++ operator, but += works.
 def match_ends(words):
 	## words - list('abc','acb', ... ,'bcb')
-	count = 0
-	for num in words:
-		if len(num) > 1:
-			if num[0] == num[-1]:
-				count += 1
-	return(count)
+    count = 0
+    for num in words:
+        if len(num) > 1:
+            if num[0] == num[-1]:
+                count += 1
+    return(count)
 
 
 # B. front_x
@@ -38,19 +38,19 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):                    
-        one = []
-        two = []                             
-                                              
-        for num in words:                    
-                if num.startswith('x') == True:                  
-                        one.append(num)                  
-                else:
-                        two.append(num)
+    one = []
+    two = []                             
+                                                  
+    for num in words:                    
+        if num.startswith('x') == True:                  
+            one.append(num)                  
+        else:
+            two.append(num)
 
-        one.sort()                         
-        two.sort()                           
-                                               
-        return(one + two)                  
+    one.sort()                         
+    two.sort()                           
+                                                   
+    return(one + two)                  
 
 
 
@@ -61,12 +61,12 @@ def front_x(words):
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 def sort_last(tuples):
-        def last_num(tuples):
-                return (tuples[-1])
+    def last_num(tuples):
+        return (tuples[-1])
                 
 
-	tuples.sort(key = last_num)
-	return(tuples)
+    tuples.sort(key = last_num)
+    return(tuples)
 
 
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python -tt
+#!/usr/bin/python -tt\\
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -25,10 +25,10 @@
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
 
-  if (count <= 10):
-    return ('Number of donuts: ' + count)
-  else: 
-    return ('Number of donuts: many')
+    if (count < 10):
+        return ('Number of donuts: ' + str(count))
+    else: 
+        return ('Number of donuts: many')
     
 
 
@@ -39,13 +39,13 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
   
-  len(s)
-  if len(s) >= 2:
-    OneTwo = s[0:2]
-    PrelastLast = s[-2:]
-    return (OneTwo + PrelastLast)
-  else:
-    return ''
+    len(s)
+    if len(s) >= 2:
+        OneTwo = s[0:2]
+        PrelastLast = s[-2:]
+        return (OneTwo + PrelastLast)
+    else:
+        return ''
  
 
 
@@ -60,10 +60,10 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
 
-  s2 = s[2:]
-  result = s2.replace(s[0], '*')
-  
-  return(result)
+    s2 = s[1:]
+    result = s2.replace(s[0], '*')
+      
+    return(s[0] + result)
 
 
 # D. MixUp
@@ -75,12 +75,12 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
   
-  sep_a = a[:2]
-  sep_b = b[:2]
-  d = a.replace(sep_a, sep_b)
-  e = b.replace(sep_b,sep_a)
+    sep_a = a[:2]
+    sep_b = b[:2]
+    d = a.replace(sep_a, sep_b)
+    e = b.replace(sep_b,sep_a)
 
-  return (d+ ' ' + e)
+    return (d+ ' ' + e)
 
 
 
@@ -91,13 +91,13 @@ def test(got, expected):
     prefix = ' OK '
   else:
     prefix = '  X '
-  print '%s got: %s expected: %s' % (prefix, repr(got), repr(expected))
+  print ('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
 
 
 # Provided main() calls the above functions with interesting inputs,
 # using test() to check if each result is correct or not.
 def main():
-  print 'donuts'
+  print ('donuts')
   # Each line calls donuts, compares its result to the expected for that call.
   test(donuts(4), 'Number of donuts: 4')
   test(donuts(9), 'Number of donuts: 9')
@@ -105,7 +105,7 @@ def main():
   test(donuts(99), 'Number of donuts: many')
 
   print
-  print 'both_ends'
+  print ('both_ends')
   test(both_ends('spring'), 'spng')
   test(both_ends('Hello'), 'Helo')
   test(both_ends('a'), '')
@@ -113,14 +113,14 @@ def main():
 
   
   print
-  print 'fix_start'
+  print ('fix_start')
   test(fix_start('babble'), 'ba**le')
   test(fix_start('aardvark'), 'a*rdv*rk')
   test(fix_start('google'), 'goo*le')
   test(fix_start('donut'), 'donut')
 
   print
-  print 'mix_up'
+  print ('mix_up')
   test(mix_up('mix', 'pod'), 'pox mid')
   test(mix_up('dog', 'dinner'), 'dig donner')
   test(mix_up('gnash', 'sport'), 'spash gnort')
