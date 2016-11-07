@@ -26,10 +26,10 @@
 def donuts(count):
 
   if (count <= 10):
-	return ('Number of donuts: ' + count)
+    return ('Number of donuts: ' + count)
   else: 
-	return ('Number of donuts: many')
-  
+    return ('Number of donuts: many')
+    
 
 
 # B. both_ends
@@ -41,11 +41,11 @@ def both_ends(s):
   
   len(s)
   if len(s) >= 2:
-	OneTwo = s[0:2]
-	PrelastLast = s[-2:]
-	return (OneTwo + PrelastLast)
+    OneTwo = s[0:2]
+    PrelastLast = s[-2:]
+    return (OneTwo + PrelastLast)
   else:
-	return ''
+    return ''
  
 
 
