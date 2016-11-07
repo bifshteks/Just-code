@@ -38,9 +38,9 @@ def not_bad(s):
   is_bad = s.find('bad')
   if is_not != -1 and is_bad != -1 and is_not < is_bad:
     result = s.replace(s[int(s.find('not')):int(s.rfind('bad')+3)], 'good')
-    return (result)   ##   s = ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
-  return(s)           ##   return (s)
-                      ##return (s)
+    return (result)   ##OR##   s = ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+  return(s)           ######   return (s)
+                      ######return (s)
   
 
 
@@ -52,23 +52,23 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-    len_a = len(a)
-    len_b = len(b)
-    if len_a % 2 == 0:
-        a_front = a[:int(len_a / 2)]
-        a_back = a[int(len_a / 2):]
-    else:
-        a_front = a[:int((len_a + 1) / 2)]
-        a_back = a[int((len_a + 1) / 2):]
-        
-    if len_b % 2 == 0:
-        b_front = b[:int(len_b / 2)]
-        b_back = b[int(len_b / 2):]
-    else:
-        b_front = b[:int((len_b + 1) / 2)]
-        b_back = b[int((len_b + 1)/ 2):]
+  len_a = len(a)
+  len_b = len(b)
+  if len_a % 2 == 0:
+    a_front = a[:int(len_a / 2)]
+    a_back = a[int(len_a / 2):]
+  else:
+    a_front = a[:int((len_a + 1) / 2)]
+    a_back = a[int((len_a + 1) / 2):]
+          
+  if len_b % 2 == 0:
+    b_front = b[:int(len_b / 2)]
+    b_back = b[int(len_b / 2):]
+  else:
+    b_front = b[:int((len_b + 1) / 2)]
+    b_back = b[int((len_b + 1)/ 2):]
 
-    return (a_front + b_front + a_back + b_back )
+  return (a_front + b_front + a_back + b_back )
 
 
 
