@@ -1,21 +1,14 @@
+def print_word(filename):
+  def dict_count_word():
 
-text = open('alice.txt', 'r')
+    text = open(filename, 'r')
 
-read_text = text.read()
-#print (read_text)
-#for line in read_text:
-#  line.split()
-#  for word in line:
-    
+    read_text = text.read()
+    rext = read_text.split()
+    for word in rext:      #why is don't work?
+      word.lower()         #
+    dict_1 = {word: rext.count(word) for word in rext}
 
-rext = read_text.split()
-for word in rext:      #why is don't work?
-  word.lower()         #
-dict_1 = {word: rext.count(word) for word in rext}
+    text.close()
 
-
-
-text.close()
-print (dict_1)
-
-
+  print (dict_1)
