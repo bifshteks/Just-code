@@ -1,47 +1,39 @@
-#def dict_count_word(filename):
-#
-#  text = open(filename, 'r')
-#
-#  read_text = text.read()
-#  rext = read_text.split()
-#  for word in rext:      #why is don't work?
-#    word.lower()         #
-#  dict_1 = {word: rext.count(word) for word in rext}
-#
-#  text.close()
-#
+def dict_count_word(filename):
+  text = open(filename, 'r')
 
-#def print_word(filename):
-# 
-#  dict_count_word()
-#  return (dict_1)
+  read_text = text.read()
+  rext = read_text.split()
+  for word in rext:      #why is don't work?
+    word.lower()         #
+  dict_1 = {word: rext.count(word) for word in rext}
+
+  text.close()
+  return dict_1
 
 
+def print_word(filename):
+ 
+  dict_count_word()
+  return (dict_1)
 
 
 
-#def print_top():
-filename = 'alice.txt'
-#dict_count_word()
-text = open(filename, 'r')
 
-read_text = text.read()
-rext = read_text.split()
-for word in rext:      #why it is don't work?
-  word.lower()         #
-dict_1 = {word: rext.count(word) for word in rext}
-text.close()
+def print_top(filename):
+  name = filename
+  
+  dict_count_word(name)
 
-list_value = list(dict_1.values())
-list_keys = list(dict_1.keys())
-#list_value_2 = list_value
-#list_value_2.sort()
-for i in range(20):
-  for index in list_value:
-    if index == max(list_value):
-      print(list_keys[list_value.index(index)])
-      list_value.remove(index)
-      break
+  list_value = list(dict_1.values())
+  list_keys = list(dict_1.keys())
+  #list_value_2 = list_value
+  #list_value_2.sort()
+  for i in range(20):
+    for index in list_value:
+      if index == max(list_value):
+        print(list_keys[list_value.index(index)])
+        list_value.remove(index)
+        break
 
    
 
