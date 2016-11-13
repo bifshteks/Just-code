@@ -39,8 +39,9 @@ list_keys = list(dict_1.keys())
 for i in range(20):
   for index in list_value:
     if index == max(list_value):
-      print(list_keys[index])
+      print(list_keys[list_value.index(index)])
       list_value.remove(index)
+      break
 
    
 
