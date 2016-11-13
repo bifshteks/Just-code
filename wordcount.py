@@ -39,17 +39,57 @@ print_words() and print_top().
 
 import sys
 
-def print_words(filename):
-#  dict_1 = {}
-  text = open(filename, 'rU')
-  for line in filename:
-    dict_1 = {word: line.count(word) for word in filename}
+#def dict_count_word(filename):
+#  text = open(filename, 'r')
+#
+#  read_text = text.read()
+#  rext = read_text.split()
+#  for word in rext:      #why is don't work?
+#    word.lower()         #
+#  dict_1 = {word: rext.count(word) for word in rext}
+#
+#  text.close()
+#  return dict_1
+#
+
+def print_word(filename):
+  #dict_count_word()
+
+  text = open(filename, 'r')
+
+  read_text = text.read()
+  rext = read_text.split()
+  for word in rext:      #why is don't work?
+    word.lower()         #
+  dict_1 = {word: rext.count(word) for word in rext}
+
+  text.close()
+  return dict_1
+
+def print_top(filename):
+  #dict_count_word()
+
+  text = open(filename, 'r')
+
+  read_text = text.read()
+  rext = read_text.split()
+  for word in rext:      #why is don't work?
+    word.lower()         #
+  dict_1 = {word: rext.count(word) for word in rext}
+
+  text.close()
+  ##
+  list_value = list(dict_1.values())
+  list_keys = list(dict_1.keys())
+  for i in range(20):
+    for index in list_value:
+      if index == max(list_value):
+        print(list_keys[list_value.index(index)])
+        list_value.remove(index)
+        break
 
 
 
-
-      #dict_1.keys(word)
-      #dict_1.value(list.count(word))
   
 
 
@@ -80,3 +120,4 @@ def main():
 
 if __name__ == '__main__':
   main()
+
