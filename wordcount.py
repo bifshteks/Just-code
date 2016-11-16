@@ -62,15 +62,15 @@ def print_words(filename):
 
 
   dict_1 = {word: rext.count(word) for word in rext}
-
+  sort = sorted(dict_1.items(), key=lambda x: x[0])
   
-  print (dict_1)
-  return dict_1
+  print (sort)
+  
 
 def print_top(filename):
   dict_1 = dict_count_word(filename)
 
-  s = sorted(dict_1.items(), key=lambda x: x[1])
+  s = sorted(dict_1.items(), key=lambda x: x[1], reverse = True)
   r = s[:20]
 
   for k, v in r:
