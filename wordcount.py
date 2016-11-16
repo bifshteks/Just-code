@@ -41,43 +41,41 @@ import sys
 
 #def dict_count_word(filename):
 #  text = open(filename, 'r')
-#
-#  read_text = text.read()
-#  rext = read_text.split()
-#  for word in rext:      #why is don't work?
-#    word.lower()         #
-#  dict_1 = {word: rext.count(word) for word in rext}
-#
+#  read_text = text.read().lower()
 #  text.close()
-#  return dict_1
-#
+  
+#  rext = read_text.split()
+#  global dict_1 = {word: rext.count(word) for word in rext}
 
-def print_word(filename):
-  #dict_count_word()
+#  return dict_1
+
+
+
+def print_words(filename):
+#  dict_count_word(filename)
 
   text = open(filename, 'r')
-
-  read_text = text.read()
+  read_text = text.read().lower()
+  text.close()
+  
   rext = read_text.split()
-  for word in rext:      #why is don't work?
-    word.lower()         #
+
+
   dict_1 = {word: rext.count(word) for word in rext}
 
-  text.close()
+  
+  print (dict_1)
   return dict_1
 
 def print_top(filename):
   #dict_count_word()
 
   text = open(filename, 'r')
-
-  read_text = text.read()
-  rext = read_text.split()
-  for word in rext:      #why is don't work?
-    word.lower()         #
-  dict_1 = {word: rext.count(word) for word in rext}
-
+  read_text = text.read().lower()
   text.close()
+
+  rext = read_text.split()
+  dict_1 = {word: rext.count(word) for word in rext}
   ##
   list_value = list(dict_1.values())
   list_keys = list(dict_1.keys())
@@ -88,12 +86,6 @@ def print_top(filename):
         list_value.remove(index)
         break
 
-
-
-  
-
-
-#def print_top():
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
@@ -120,4 +112,3 @@ def main():
 
 if __name__ == '__main__':
   main()
-
