@@ -45,7 +45,8 @@ def dict_count_word(filename):
   text.close()
   
   rext = read_text.split()
-  dict_1 = {word: rext.count(word) for word in rext}
+
+  dict_1 = {word: rext.count(word) for word in set(rext)}
 
   return dict_1
 
