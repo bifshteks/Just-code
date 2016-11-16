@@ -39,15 +39,15 @@ print_words() and print_top().
 
 import sys
 
-#def dict_count_word(filename):
-#  text = open(filename, 'r')
-#  read_text = text.read().lower()
-#  text.close()
+def dict_count_word(filename):
+  text = open(filename, 'r')
+  read_text = text.read().lower()
+  text.close()
   
-#  rext = read_text.split()
-#  global dict_1 = {word: rext.count(word) for word in rext}
+  rext = read_text.split()
+  dict_1 = {word: rext.count(word) for word in rext}
 
-#  return dict_1
+  return dict_1
 
 
 
@@ -68,23 +68,13 @@ def print_words(filename):
   return dict_1
 
 def print_top(filename):
-  #dict_count_word()
+  dict_1 = dict_count_word(filename)
 
-  text = open(filename, 'r')
-  read_text = text.read().lower()
-  text.close()
+  s = sorted(dict_1.items(), key=lambda x: x[1])
+  r = s[:20]
 
-  rext = read_text.split()
-  dict_1 = {word: rext.count(word) for word in rext}
-  ##
-  list_value = list(dict_1.values())
-  list_keys = list(dict_1.keys())
-  for i in range(20):
-    for index in list_value:
-      if index == max(list_value):
-        print(list_keys[list_value.index(index)])
-        list_value.remove(index)
-        break
+  for k, v in r:
+      print (k)
 
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
