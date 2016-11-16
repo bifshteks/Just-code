@@ -52,16 +52,8 @@ def dict_count_word(filename):
 
 
 def print_words(filename):
-#  dict_count_word(filename)
 
-  text = open(filename, 'r')
-  read_text = text.read().lower()
-  text.close()
-  
-  rext = read_text.split()
-
-
-  dict_1 = {word: rext.count(word) for word in rext}
+  dict_1 = dict_count_word(filename)
   sort = sorted(dict_1.items(), key=lambda x: x[0])
   
   print (sort)
