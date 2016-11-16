@@ -52,16 +52,30 @@ def mimic_dict(filename):
   filename_.close()
   
   text = text_read.split()   # list
+  text.append('qwerty')
 
-  mimic_dict = {}
 #  text_not_re = text
 #  for i in text_not_re:
  #   if text_not_re.count(i) > 1:
 #      text_not_re.remove(i)
 #  words_follow = dict.fromkeys(text_not_re[:20])  # удалить срез
   txt = set(text)
-  for word in txt:
-    mimic_dict.fromkeys(txt, text[text.index(word) + 1])
+  mim_dict = {}
+  mim_dict.fromkeys(text)
+  for word in text:
+    if word != 'qwerty':
+      mim_dict[word] = text[text.index(word) + 1]  # будет перезаписываться 
+                                                   # значение
+  list_md = list(mim_dict)
+
+#  for key, value in mim_dict:
+#    if list_md.count(key) > 1:       #list_md = 
+                                             #[(word , 1), (word2 , 2)]
+  for item in list_md:
+    while list_md[0].count(item) > 1:
+      list_md[1] += ',' + list_md[    list_md[      list_md.index(item,[list_md.index(item)+ 1,])    ][1]    ] # добавляет в [1] значение из словаря ключа, который встречается в срезе, следующим за индексом этого 
+      i = list_md.index(item,[list_md.index(item)+ 1,])   # удаляет этоу самую следующую пару
+      list_md.remove(list_md[i])                          # 
     
       
   
@@ -74,7 +88,7 @@ def mimic_dict(filename):
                                                   # text[text.index(word) + 1]
 
   
-  print(mimic_dict)
+  print(mim_dict)  
   return
 
 
@@ -96,3 +110,5 @@ def main():
 
 if __name__ == '__main__':
   main()
+
+
