@@ -52,49 +52,36 @@ def mimic_dict(filename):
   filename_.close()
   
   text = text_read.split()   # list
-  text.append('qwerty')
 
-#  text_not_re = text
-#  for i in text_not_re:
- #   if text_not_re.count(i) > 1:
-#      text_not_re.remove(i)
-#  words_follow = dict.fromkeys(text_not_re[:20])  # удалить срез
-  txt = set(text)
+  global mim_dict
   mim_dict = {}
-  mim_dict.fromkeys(text)
-  for word in text:
-    if word != 'qwerty':
-      mim_dict[word] = text[text.index(word) + 1]  # будет перезаписываться 
-                                                   # значение
-  list_md = list(mim_dict)
-
-#  for key, value in mim_dict:
-#    if list_md.count(key) > 1:       #list_md = 
-                                             #[(word , 1), (word2 , 2)]
-  for item in list_md:
-    while list_md[0].count(item) > 1:
-      list_md[1] += ',' + list_md[    list_md[      list_md.index(item,[list_md.index(item)+ 1,])    ][1]    ] # добавляет в [1] значение из словаря ключа, который встречается в срезе, следующим за индексом этого 
-      i = list_md.index(item,[list_md.index(item)+ 1,])   # удаляет этоу самую следующую пару
-      list_md.remove(list_md[i])                          # 
-    
-      
-  
+  for i, word in enumerate(text):
+    if i+1 != len(text):
+      word_list = mim_dict.get(word, [])
+      word_list.append(text[i + 1])
+      mim_dict[word] = word_list
 
 
 
-
-
-
-                                                  # text[text.index(word) + 1]
 
   
   print(mim_dict)  
-  return
+  return mim_dict
 
 
 def print_mimic(mimic_dict, word):
   """Given mimic dict and start word, prints 200 random words."""
-  # +++your code here+++
+  global mim_dict
+  keys = mim_dict.keys()
+  if word in mim_dict:
+    print(word)
+    while i<= 200:
+      for i, val in enumerate(mim_dict.values()):
+        print (random.choise( mim_dict.get(keys(word + 1)  )))
+      
+      
+      
+      
   return
 
 
