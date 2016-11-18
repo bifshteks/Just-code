@@ -44,6 +44,9 @@ columns, so the output looks better.
 import random
 import sys
 
+mim_dict = {}
+counter = 0
+
 
 def mimic_dict(filename):
   """Returns mimic dict mapping each word to list of words which follow it."""
@@ -54,7 +57,7 @@ def mimic_dict(filename):
   text = text_read.split()   # list
 
   global mim_dict
-  mim_dict = {}
+#  mim_dict = {}
   for i, word in enumerate(text):
     if i+1 != len(text):
       word_list = mim_dict.get(word, [])
@@ -72,13 +75,17 @@ def mimic_dict(filename):
 def print_mimic(mimic_dict, word):
   """Given mimic dict and start word, prints 200 random words."""
   global mim_dict
-  keys = mim_dict.keys()
-  if word in mim_dict:
-    print(word)
-    while i<= 200:
-      for i, val in enumerate(mim_dict.values()):
-        print (random.choise( mim_dict.get(keys(word + 1)  )))
-      
+  global counter
+  keys = list(mim_dict.keys())
+
+#  if word in keys:
+  print(word)
+  while counter <= 200:
+#      for i, val in enumerate(mim_dict.values()):
+#    print (random.choice(   list(mim_dict.get[keys(keys.index(word) + 1)])   ))
+    w = random.choice( mim_dict[keys[keys.index(word) + 1]]  )
+    print (w)
+    counter += 1
       
       
       
