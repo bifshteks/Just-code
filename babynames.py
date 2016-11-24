@@ -44,7 +44,6 @@ def extract_names(filename):
   f = file.read()
   file.close()
   year = re.findall(r'Popularity in (\d{4})', f)
-#  names = re.findall(r'<td>([a-zA-Z]+)</td>', f)  # re.IGONRECASE
   rnn= re.findall(
     r'<tr align="right"><td>(\d+)</td><td>([a-zA-Z]+)</td><td>([a-zA-Z]+)</td>',
     f)    #  rank_name(m)_name(f)
